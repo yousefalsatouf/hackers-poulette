@@ -1,6 +1,6 @@
 <?php
 
-include_once('helpers/countries.php');
+include_once('../helpers/countries.php');
 
 ?>
 
@@ -13,6 +13,7 @@ include_once('helpers/countries.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hackers-poulette</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
@@ -65,18 +66,18 @@ include_once('helpers/countries.php');
                 </select>
             </div>
             <div class="form-group col-lg-10 text-secondary">
-                <label class="font-weight-bold">Subject: </label>
+                <label class="font-weight-bold">Programming Languages: </label>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="sub1">
-                    <label class="form-check-label" for="materialUncheckedDisabled2">Subject 1</label>
+                    <input type="checkbox" class="form-check-input" name="subject" value="py">
+                    <label class="form-check-label" for="materialUncheckedDisabled2">Python</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="sub2">
-                    <label class="form-check-label" for="materialCheckedDisabled2">Subject 2</label>
+                    <input type="checkbox" class="form-check-input" name="subject" value="php">
+                    <label class="form-check-label" for="materialCheckedDisabled2">PHP</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="sub3">
-                    <label class="form-check-label" for="materialCheckedDisabled2">Subject 3</label>
+                    <input type="checkbox" class="form-check-input" name="subject" value="nodejs">
+                    <label class="form-check-label" for="materialCheckedDisabled2">Nodejs</label>
                 </div>
             </div>
             <div class="form-group col-lg-10 text-secondary shadow-textarea">

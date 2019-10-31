@@ -1,0 +1,11 @@
+.container
+{
+    margin: 5rem auto;
+    padding: 3rem;
+    box-shadow: 2px 2px 50px 2px gray;
+    
+}
+.col-lg-10
+{
+    margin: 3rem;
+}
