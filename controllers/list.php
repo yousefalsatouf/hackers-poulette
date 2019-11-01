@@ -17,7 +17,7 @@ if (!empty($_POST)) {
         $show_msg = "Sorry, Missing Information";
     } else {
         $class_alert = "alert-success";
-        $show_msg = "Done, send Information with success";
+        $show_msg = "Done, Information sent with success";
     }
 } else { }
 

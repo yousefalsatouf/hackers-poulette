@@ -1,15 +1,19 @@
 .container
 {
-    margin: 5rem auto;
-    padding: 3rem;
-    box-shadow: 2px 2px 50px 2px gray;
+    width: 50%;
+    margin: 2rem auto;
+    padding: 2rem;
+    box-shadow: 1px 1px 10px 0px #000;
     
 }
+
+form
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .col-lg-10
 {
-    margin: 3rem;
-}
-.red .green 
-{
-    padding: 2rem;
+    margin: 2rem;
 }

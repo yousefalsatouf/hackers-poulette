@@ -28,24 +28,22 @@ include_once('../controllers/list.php');
         <div class="alert <?php echo $class_alert; ?>" role="alert">
             <?php
             if (!empty($show_msg)) {
-                echo "<h3 class='red missingfield'> <b>Attention:</b> " . $show_msg . "</h3>";
-            } else {
-                echo "<h3 class='green missingfield'> <b>Success:</b> " . $show_msg . "</h3>";
+                echo "<h6 class='red missingfield'> <b>Attention:</b> " . $show_msg . "</h6>";
             }
             ?>
         </div>
         <form action="<?php !empty($show_msg) ?  "" : "index.php"; ?>" method="POST">
-            <div class="form-group col-lg-10 text-secondary">
+            <div class="form-group col-lg-5 text-secondary">
                 <label for="formGroupExampleInput" class="font-weight-bold">First Name: </label>
-                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="f-name" placeholder="First Name">
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="f-name" name="f-name" placeholder="First Name">
             </div>
-            <div class="form-group col-lg-10 text-secondary">
+            <div class="form-group col-lg-5 text-secondary">
                 <label for="formGroupExampleInput2" class="font-weight-bold">Last Name: </label>
-                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="l-name" placeholder="Last Name">
+                <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="l-name" name="l-name" placeholder="Last Name">
             </div>
             <div class="form-group col-lg-10 text-secondary">
                 <label for="formGroupExampleInput2" class="font-weight-bold">E-mail: </label>
-                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="e-mail" placeholder="E-mail">
+                <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="e-mail" name="e-mail" placeholder="E-mail">
             </div>
             <div class="col-lg-10 form-group col-lg-10 text-secondary">
                 <label class="font-weight-bold">Gender: </label><br />
@@ -94,10 +92,10 @@ include_once('../controllers/list.php');
             </div>
             <div class="form-group col-lg-10 text-secondary shadow-textarea">
                 <label for="formGroupExampleInput" class="font-weight-bold">Message: </label>
-                <textarea class="form-control z-depth-1 border-top-0 border-right-0 border-left-0" name="message" rows="3" placeholder="Write something here..."></textarea>
+                <textarea class="form-control z-depth-1 border-top-0 border-right-0 border-left-0" id="message" name="message" rows="3" placeholder="Write something here..."></textarea>
             </div>
             <div class="form-group col-lg-10 text-secondary shadow-textarea">
-                <input type="submit" class="btn btn-primary" value="Send !">
+                <input type="submit" class="btn btn-primary" id="send" value="Send !">
             </div>
 
         </form>
