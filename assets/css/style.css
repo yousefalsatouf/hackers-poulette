@@ -1,19 +1,56 @@
+body
+{
+    background-color: #30a7c6;
+}
+
+
 .container
 {
     width: 50%;
     margin: 2rem auto;
     padding: 2rem;
     box-shadow: 1px 1px 10px 0px #000;
-    
+    background-color: white;
 }
 
 form
 {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+.title
+{
+    display: flex;
 
+}
 .col-lg-10
 {
     margin: 2rem;
 }
+
+.btn
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #30a7c6;
+    border: 0rem;
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.success
+{
+    color: white;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+

@@ -22,13 +22,14 @@ include_once('../controllers/list.php');
 
     <div class="container">
         <div class="col-lg-12 title">
-            <h1 class="text-info">Fill Up The Form Contact, Please!</h1>
+            <h1 class="text-info col-lg-10">Fill Up The Form Contact, Please!</h1>
+            <img src="../assets/img/hackers-poulette-logo.png" alt="here is a logo" class="col-lg-2">
         </div>
 
         <div class="alert <?php echo $class_alert; ?>" role="alert">
             <?php
             if (!empty($show_msg)) {
-                echo "<h6 class='red missingfield'> <b>Attention:</b> " . $show_msg . "</h6>";
+                echo "<h6 class='red missingfield'> <b>$alert:</b> " . $show_msg . "!</h6>";
             }
             ?>
         </div>
@@ -36,14 +37,35 @@ include_once('../controllers/list.php');
             <div class="form-group col-lg-5 text-secondary">
                 <label for="formGroupExampleInput" class="font-weight-bold">First Name: </label>
                 <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="f-name" name="f-name" placeholder="First Name">
+                <span>
+                    <?php
+                    if (!empty($fieldFname)) {
+                        echo "<p class='text-danger'>" . $fieldFname . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="form-group col-lg-5 text-secondary">
                 <label for="formGroupExampleInput2" class="font-weight-bold">Last Name: </label>
                 <input type="text" class="form-control border-top-0 border-right-0 border-left-0" id="l-name" name="l-name" placeholder="Last Name">
+                <span>
+                    <?php
+                    if (!empty($fieldLname)) {
+                        echo "<p class='text-danger'>" . $fieldLname . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="form-group col-lg-10 text-secondary">
                 <label for="formGroupExampleInput2" class="font-weight-bold">E-mail: </label>
                 <input type="email" class="form-control border-top-0 border-right-0 border-left-0" id="e-mail" name="e-mail" placeholder="E-mail">
+                <span>
+                    <?php
+                    if (!empty($fieldEmail)) {
+                        echo "<p class='text-danger'>" . $fieldEmail . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="col-lg-10 form-group col-lg-10 text-secondary">
                 <label class="font-weight-bold">Gender: </label><br />
@@ -59,11 +81,18 @@ include_once('../controllers/list.php');
                     <input class="form-check-input" type="radio" name="gender" value="other">
                     <label class="form-check-label" for="inlineRadio3">Other</label>
                 </div>
+                <span>
+                    <?php
+                    if (!empty($fieldGender)) {
+                        echo "<p class='text-danger'>" . $fieldGender . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="form-group col-lg-10 text-secondary">
                 <label for="" class="font-weight-bold">Select Your Country:</label>
                 <select class="form-control" name="country">
-                    <option value="">===Choices===</option>
+                    <option value="ch">===Choices===</option>
                     <?php
 
                     foreach ($countries as $key => $country) {
@@ -74,32 +103,56 @@ include_once('../controllers/list.php');
                     ?>
 
                 </select>
+                <span>
+                    <?php
+                    if (!empty($fieldCountry)) {
+                        echo "<p class='text-danger'>" . $fieldCountry . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="form-group col-lg-10 text-secondary">
                 <label class="font-weight-bold">Programming Languages: </label>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="py">
+                    <input type="checkbox" class="form-check-input" name="subject[]" value="pyton">
                     <label class="form-check-label" for="materialUncheckedDisabled2">Python</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="php">
+                    <input type="checkbox" class="form-check-input" name="subject[]" value="php">
                     <label class="form-check-label" for="materialCheckedDisabled2">PHP</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="subject" value="nodejs">
+                    <input type="checkbox" class="form-check-input" name="subject[]" value="nodejs">
                     <label class="form-check-label" for="materialCheckedDisabled2">Nodejs</label>
                 </div>
+                <span>
+                    <?php
+                    if (!empty($fieldSubj)) {
+                        echo "<p class='text-danger'>" . $fieldSubj . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
             <div class="form-group col-lg-10 text-secondary shadow-textarea">
                 <label for="formGroupExampleInput" class="font-weight-bold">Message: </label>
                 <textarea class="form-control z-depth-1 border-top-0 border-right-0 border-left-0" id="message" name="message" rows="3" placeholder="Write something here..."></textarea>
+                <span>
+                    <?php
+                    if (!empty($fieldMsg)) {
+                        echo "<p class='text-danger'>" . $fieldMsg . "</p>";
+                    }
+                    ?>
+                </span>
             </div>
-            <div class="form-group col-lg-10 text-secondary shadow-textarea">
+            <div class="form-group col-lg-10 btn shadow-textarea">
                 <input type="submit" class="btn btn-primary" id="send" value="Send !">
             </div>
-
         </form>
+        <div class="form-group col-lg-10 shadow-textarea">
+            <a href="index.php"><button class="bg-success success btn" disabled>See Information</button></a>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
     <script src="../assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
