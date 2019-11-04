@@ -1,13 +1,16 @@
 <?php
+
+require '../vendor/autoload.php';
+
 include_once('../view/form.php');
 
-$firstName  = isset($_POST['f-name']) ? $_POST['f-name'] : "";
-$lastName   = isset($_POST['l-name']) ? $_POST['l-name'] : "";
-$email      = isset($_POST['e-mail']) ? $_POST['e-mail'] : "";
-$gender     = isset($_POST['gender']) ? $_POST['gender'] : "";
-$country    = isset($_POST['country']) ? $_POST['country'] : "";
-$subj       = isset($_POST['subject']) ? $_POST['subject'] : "";
-$msg        = isset($_POST['message']) ? $_POST['message'] : "";
+$firstName  = isset($_POST['f-name']) ? $_POST['f-name']    : "";
+$lastName   = isset($_POST['l-name']) ? $_POST['l-name']    : "";
+$email      = isset($_POST['e-mail']) ? $_POST['e-mail']    : "";
+$gender     = isset($_POST['gender']) ? $_POST['gender']    : "";
+$country    = isset($_POST['country']) ? $_POST['country']  : "";
+$subj       = isset($_POST['subject']) ? $_POST['subject']  : "";
+$msg        = isset($_POST['message']) ? $_POST['message']  : "";
 
 $data = [];
 
@@ -42,14 +45,29 @@ if (!empty($_POST)) {
         $alert = "Success";
         $show_msg = "Done, You can find It at down of the page!";
         $data = array(
-            "First Name: " => $firstName,
-            "Last Name: " => $lastName,
-            "Email: " => $email,
-            "Gender: " => $gender,
-            "Country: " => $country,
-            "Subject: " => $subj,
-            "Message: " => $msg
+            "First Name: "  => $firstName,
+            "Last Name: "   => $lastName,
+            "Email: "       => $email,
+            "Gender: "      => $gender,
+            "Country: "     => $country,
+            "Subject: "     => $subj,
+            "Message: "     => $msg
         );
+
+        $sender = $email;
+        $recipient = $email;
+
+        $subject = "Copy of your form submission";
+        $message = $msg;
+        $headers = 'From:' . $sender;
+
+        if (mail($recipient, $subject, $message, $headers)) {
+            $email_alert = "alert-danger";
+            $email_gone = "Message Is Gone!";
+        } else {
+            $email_alert = "alert-success";
+            $email_not_gone = "Message is not gone!";
+        }
     }
 } else { }
 
