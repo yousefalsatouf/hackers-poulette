@@ -1,8 +1,10 @@
 <?php
 
 require '../vendor/autoload.php';
-
 include_once('../view/form.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 $firstName  = isset($_POST['f-name']) ? $_POST['f-name']    : "";
 $lastName   = isset($_POST['l-name']) ? $_POST['l-name']    : "";
@@ -54,21 +56,30 @@ if (!empty($_POST)) {
             "Message: "     => $msg
         );
 
-        $sender = $email;
-        $recipient = $email;
+        echo json_encode($data);
 
-        $subject = "Copy of your form submission";
-        $message = $msg;
-        $headers = 'From:' . $sender;
+        $mail =  new PHPMailer();
 
-        if (mail($recipient, $subject, $message, $headers)) {
-            $email_alert = "alert-danger";
-            $email_gone = "Message Is Gone!";
-        } else {
-            $email_alert = "alert-success";
-            $email_not_gone = "Message is not gone!";
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 587;
+            $mail->SMTPAuth = true;
+            $mail->SMTPSecure = 'tls';
+            $mail->Username = 'zartovmaroteov@gmail.com';
+            $mail->Password = 'under087';
+
+            $mail->setFrom('from@gfg.com', 'Name');
+            $mail->addAddress($email, $lastName);
+
+            $mail->isHTML(true);
+            $mail->Subject = "Sent successfully";
+            $mail->Body    = $msg;
+            $mail->AltBody = 'Body in plain text for non-HTML mail clients';
+            $mail->send();
+            $email_gone = "Your Mail has been sent successfully, We will reply as soon as possible";
+        } catch (Exception $e) {
+            $email_isnot_gone =   "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 } else { }
-
-echo json_encode($data);

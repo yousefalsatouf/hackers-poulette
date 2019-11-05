@@ -24,7 +24,7 @@ include_once('../controllers/list.php');
     if (!empty($email_gone)) {
         echo "<div class=\"alert-success\" role=\"alert\"><h3 class='missingfield'> <b>Alert:</b> " . $email_gone . "!</h3></div>";
     }
-    if (!empty($email_not_gone)) {
+    if (!empty($email_isnot_gone)) {
         echo "<div class=\"alert-danger\" role=\"alert\"><h3 class='missingfield'> <b>Alert:</b> " . $email_not_gone . "!</h3></div>";
     }
     ?>
