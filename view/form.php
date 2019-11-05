@@ -1,8 +1,6 @@
 <?php
-
-include_once('../helpers/countries.php');
-include_once('../controllers/list.php');
-
+include('helpers/countries.php');
+include('controllers/list.php');
 
 ?>
 

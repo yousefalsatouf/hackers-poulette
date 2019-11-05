@@ -1,6 +1,3 @@
-<?php
-echo "Hello World! ";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +10,10 @@ echo "Hello World! ";
 </head>
 
 <body>
-    <h1>Hi there, if u seeing this u r good</h1>
-    <div class="container">
-
+    <div>
+        <?php
+        include('view/form.php');
+        ?>
     </div>
     <script src="../assets/js/libs/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="../assets/js/script.js"></script>

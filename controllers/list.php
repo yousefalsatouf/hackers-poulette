@@ -1,7 +1,7 @@
 <?php
 
-require '../vendor/autoload.php';
-include_once('../view/form.php');
+require 'vendor/autoload.php';
+include_once('view/form.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -56,7 +56,7 @@ if (!empty($_POST)) {
             "Message: "     => $msg
         );
 
-        echo json_encode($data);
+
 
         $mail =  new PHPMailer();
 
@@ -83,3 +83,6 @@ if (!empty($_POST)) {
         }
     }
 } else { }
+
+
+echo print_r($data);
