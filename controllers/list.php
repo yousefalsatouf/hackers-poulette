@@ -45,7 +45,7 @@ if (!empty($_POST)) {
     } else {
         $class_alert = "alert-success";
         $alert = "Success";
-        $show_msg = "Done, You can find It at the Top of the page!";
+        $show_msg = "Done, You can find It at the Topgit  of the page!";
         $data = array(
             "First Name: "  => $firstName,
             "Last Name: "   => $lastName,

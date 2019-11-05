@@ -1,0 +1,22 @@
+{
+  "name": "hackers-poulette",
+  "version": "1.0.0",
+  "description": "[The link to the project here](https://yousefalsatouf.github.io/hackers-poulette/.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yousefalsatouf/hackers-poulette.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yousefalsatouf/hackers-poulette/issues"
+  },
+  "homepage": "https://github.com/yousefalsatouf/hackers-poulette#readme",
+  "dependencies": {
+    "node": "^12.13.0"
+  }
+}
