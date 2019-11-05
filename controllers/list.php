@@ -45,7 +45,7 @@ if (!empty($_POST)) {
     } else {
         $class_alert = "alert-success";
         $alert = "Success";
-        $show_msg = "Done, You can find It at down of the page!";
+        $show_msg = "Done, You can find It at the Top of the page!";
         $data = array(
             "First Name: "  => $firstName,
             "Last Name: "   => $lastName,
@@ -56,7 +56,7 @@ if (!empty($_POST)) {
             "Message: "     => $msg
         );
 
-
+        echo print_r($data);
 
         $mail =  new PHPMailer();
 
@@ -83,6 +83,3 @@ if (!empty($_POST)) {
         }
     }
 } else { }
-
-
-echo print_r($data);
