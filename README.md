@@ -1,3 +1,3 @@
 # The project has been done with the MVC framework!
-## To run the form please run hachers-poulette/views/form.php
+## To run the Project, please tap hachers-poulette/views/form.php
 ### Have Fin !!.
